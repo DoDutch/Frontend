@@ -4,9 +4,7 @@ import { reset } from "styled-reset";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./fonts/Pretendard.css";
 import { createGlobalStyle } from "styled-components";
-
 import { DayCost } from "./Components/DayCost";
-import { DummyData } from "./Components/DummyData";
 import TravelCreate from "./Travel/TravelCreate";
 import TravelMain from "./Travel/TravelMain";
 import TravelJoin from "./Travel/TravelJoin";
@@ -17,12 +15,7 @@ import { ExpAdd } from "./expAdd/ExpAdd";
 import Expense from "./Calculate/Expense";
 import CalDetail from "./Calculate/CalDetail";
 import CalTotal from "./Calculate/CalTotal";
-import { Kakaologin } from "./Login/Kakaologin";
-import { Redirect } from "./Login/Redirect";
 import { TravelPictureLook } from "./travelSpecific/TravelPictureLook";
-import { MyPage } from "./mypage/MyPage";
-import { Nickname } from "./Login/Nickname";
-import { OnBoarding } from "./onBording/OnBoarding";
 import MainPage from './Main/Mainpage';
 
 function App() {
@@ -45,14 +38,13 @@ function App() {
       <GlobalStyle />
       <Router>
         <Routes>
-          <Route path="/" element={<OnBoarding />} />  
+  
           <Route path="/trip" element={<TravelCreate />} />
           <Route path="/trip/share/:tripId" element={<TravelJoin/>} />
       
           
           <Route path="/tripSearch" element={<TravelSearch />} />
           <Route path="/tripMain" element={<TravelMain />} />
-          <Route path="/DummyData" element={<DummyData />} />
           <Route path='/travel/detail/:tripId' element={<TravelDetail />} />
            {/* 여기 뒤에 /:tripId 추가해야함 */}
 
@@ -68,12 +60,8 @@ function App() {
           <Route path="/calculate/total" element={<CalTotal />} />
         
           <Route path="/main" element={<MainPage />} />
-          <Route path='/login' element={<Kakaologin />} />
-          <Route path='/auth/kakao' element={<Redirect/>}/>
           <Route path='/pictureLook/:tripId' element={<TravelPictureLook/>}/>  
           {/* 여기 뒤에 /:tripId 추가해야함 */}
-          <Route path='/mypage' element={<MyPage/>}/>
-          <Route path='/nickname' element={<Nickname/>}/>
 
         </Routes>
       </Router>
