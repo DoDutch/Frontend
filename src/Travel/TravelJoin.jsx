@@ -66,6 +66,7 @@ return (
         <CircleWrapper>
           <Circle>
             {userData.tripImageUrl && (
+              // 코드 수정 들어갔음. 원래는 <img src={userData.tripImageUrl}
               <img src={userData.tripImageUrl} style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
             )}
           </Circle>
